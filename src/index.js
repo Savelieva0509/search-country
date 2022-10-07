@@ -1,7 +1,7 @@
 import './css/styles.css';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { createMarkupCard } from './createMarkup';
-import { createMarkupList } from './createMarkup';
+import { createMarkupCard,createMarkupList  } from './createMarkup';
+import { fetchCountries } from './fetch';
 
 const debounce = require('lodash.debounce');
 
@@ -30,6 +30,7 @@ const handleInput = (event) => {
     if (!userText) {
         return;
     }
+    
     fetchCountries(userText).then(onSuccess).catch(onError);
     }
 
@@ -42,7 +43,7 @@ function onSuccess(countries) {
         return;
     }
 
-    if(countries.length > 1  && countries.length <= 10) {
+    if(countries.length >= 2  && countries.length <= 10) {
     const markup = countries.map(country => createMarkupList(country))
         countryList.innerHTML = markup.join('');
         countryCard.innerHTML = "";
