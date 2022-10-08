@@ -10,19 +10,6 @@ const countryCard = document.querySelector('.country-info');
 const countryList = document.querySelector ('.country-list')
 const inputRef = document.querySelector('#search-box');
 
-
-function fetchCountries(name) {
-    const URL = `https://restcountries.com/v3.1/name/${name}?fields=name,capital,population,flags,languages`;
-    return fetch(URL).then(
-    response => {
-      if (!response.ok) {
-        throw new Error(response.status);
-      }
-      return response.json();
-    }
-   )
-}  
-
 const handleInput = (event) => {
     event.preventDefault();
     const userText = event.target.value.trim().toLowerCase();
