@@ -1,11 +1,11 @@
 {
-  "name": "parcel-project-template",
+  "name": "search-country",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://Savelieva0509.github.io/goit-js-hw-10",
+  "homepage": "https://Savelieva0509.github.io/search-country",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /goit-js-hw-10/"
+    "build": "parcel build src/*.html --public-url /search-country/"
   },
   "repository": {
     "type": "git",
